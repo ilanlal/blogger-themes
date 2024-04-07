@@ -53,7 +53,7 @@
   <Variable name="body.background" description="Background"
       color="$(body.background.color)"
       type="background"
-      default="$(color) none repeat scroll top left"  value="$(color) no-repeat scroll top center /* Credit: Michael Elkan (http://www.offset.com/photos/394244) */;"/>
+      default="$(color) none repeat scroll top left"  value="#eeeeee url(none) no-repeat scroll top center /* Credit: Michael Elkan (http://www.offset.com/photos/394244) */"/>
   <Variable name="body.background.color" description="Body background color"
       type="color"
       default="#eee"  value="#eeeeee"/>
