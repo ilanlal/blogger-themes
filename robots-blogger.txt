@@ -1,0 +1,7 @@
+User-agent: Mediapartners-Google
+Disallow:
+User-agent: *
+Disallow: /search?q=*
+Disallow: /*?updated-max=*
+Allow: /
+Sitemap: https://YOUR-BLOG.blogspot.com/sitemap.xml

@@ -9,6 +9,9 @@
       expr:content='data:blog.isMobile ? &quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0&quot; : &quot;width=1100&quot;'
       name='viewport' />
     <b:include data='blog' name='all-head-content' />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta expr:content='data:blog.metaDescription' name='description' />
+    <meta expr:content='data:blog.' name='title' />
     <meta content='article' property='og:type' />
     <link href='REPLACE_WITH_YOUR_GOOGLE_PLUS_PROFILE_URL' rel='publisher' />
     <meta content='REPLACE_WITH_YOUR_FACEBOOK_APP_ID' property='fb:app_id' />

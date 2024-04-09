@@ -14,6 +14,9 @@
     </title>
     <b:include data='blog' name='all-head-content' />
     <meta content='article' property='og:type' />
+    <meta expr:content='data:blog.title' property='og:site_name' />
+    <meta expr:content='data:blog.url' property='og:url' />
+    <meta expr:content='data:blog.title' property='og:title' />
     <link href='REPLACE_WITH_YOUR_GOOGLE_PLUS_PROFILE_URL' rel='publisher' />
     <meta content='REPLACE_WITH_YOUR_FACEBOOK_APP_ID' property='fb:app_id' />
     <meta content='REPLACE_WITH_YOUR_NAME' name='author' />
@@ -21,7 +24,7 @@
       cond='data:blog.pageType == &quot;archive&quot; or data:blog.searchQuery or data:blog.searchLabel'>
       <meta content='noindex,noarchive' name='robots' />
     </b:if>
-    <b:skin version='1.3.3'><![CDATA[/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+    <b:skin version='1.3.3'><![CDATA[/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:38px;margin:12px 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 /*
 <!-- Constants -->
 
@@ -46,7 +49,7 @@
 <Group description="Page Text">
   <Variable name="body.text.font" description="Font"
       type="font"
-      default="$(robotoNormal15)"  value="normal normal 24px Roboto, sans-serif"/>
+      default="$(robotoNormal15)"  value="normal normal 22px Roboto, sans-serif"/>
   <Variable name="body.text.color" description="Color"
       type="color"
       default="#757575"  value="#FFFFFF"/>
@@ -90,7 +93,7 @@
 <Group description="Blog title" selector="div.widget.Header">
   <Variable name="blog.title.font" description="Font"
       type="font"
-      default="$(robotoBold45)"  value="normal bold 52px Roboto, sans-serif"/>
+      default="$(robotoBold45)"  value="normal bold 45px Roboto, sans-serif"/>
   <Variable name="blog.title.color" description="Color"
       type="color"
       default="#fff"  value="#FFFFFF"/>
@@ -126,13 +129,13 @@
 <Group description="Posts" selector="div.widget.Blog">
   <Variable name="posts.title.color" description="Post title color"
       type="color"
-      default="#212121"  value="#ffffff"/>
+      default="#212121"  value="#fce8b2"/>
   <Variable name="posts.title.font" description="Post title font"
       type="font"
-      default="$(robotoBold22)"  value="normal bold 40px Roboto, sans-serif"/>
+      default="$(robotoBold22)"  value="normal bold 24px Roboto, sans-serif"/>
   <Variable name="posts.stream.title.font" description="Post title stream font"
       type="font"
-      default="$(robotoBold30)"  value="normal bold 40px Roboto, sans-serif"/>
+      default="$(robotoBold30)"  value="bold 30px Roboto, sans-serif"/>
   <Variable name="posts.text.font" description="Post text font"
       type="font"
       default="$(body.text.font)"  value="normal normal 22px Roboto, sans-serif"/>
@@ -141,17 +144,17 @@
       default="$(body.text.color)"  value="#FFFFFF"/>
   <Variable name="posts.byline.color" description="Post byline color"
       type="color"
-      default="rgba(0, 0, 0, 0.54)"  value="#ffffff"/>
+      default="rgba(0, 0, 0, 0.54)"  value="#fce8b2"/>
   <Variable name="blockquote.font" description="Blockquote font"
       type="font"
-      default="$(robotoLightItalic15)"  value="italic 300 22px Roboto, sans-serif"/>
+      default="$(robotoLightItalic15)"  value="italic 300 24x Roboto, sans-serif"/>
   <Variable name="blockquote.color" description="Blockquote color"
       type="color"
-      default="#444"  value="#FFFFFF"/>
+      default="#444"  value="#EEEEEE"/>
   <Variable name="posts.icons.color"
       description="Post icons color"
       type="color"
-      default="#707070"  value="#C6DAFC"/>
+      default="#707070"  value="#EEEEEE"/>
 </Group>
 
 <Group description="Search">
@@ -184,15 +187,15 @@
   <Variable name="popularposts.background.color"
       description="Popular post background color"
       type="color"
-      default="$(body.background.color)"  value="#444444"/>
+      default="$(body.background.color)"  value="#1d1d1d"/>
   <Variable name="popularposts.byline.color"
       description="Popular post byline color"
       type="color"
-      default="$(posts.byline.color)"  value="#ffffff"/>
+      default="$(posts.byline.color)"  value="#FFFFFF"/>
   <Variable name="popularposts.title.color"
       description="Popular post title color"
       type="color"
-      default="$(posts.title.color)"  value="#ffffff"/>
+      default="$(posts.title.color)"  value="#fce8b2"/>
   <Variable name="popularposts.text.color"
       description="Popular post text color"
       type="color"
@@ -200,22 +203,22 @@
   <Variable name="popularposts.link.color"
       description="Popular post link color"
       type="color"
-      default="$(body.link.color)"  value="#c6dafc"/>
+      default="$(body.link.color)"  value="#f4a900"/>
 </Group>
 
 <Group description="Post navigation" selector='div.blog-pager'>
   <Variable name="posts.navigation.link.color"
       description="Post navigation links color"
       type="color"
-      default="$(body.link.color)"  value="#C6DAFC"/>
+      default="$(body.link.color)"  value="#f4a900"/>
   <Variable name="posts.navigation.link.visited.color"
       description="Post navigation links visited color"
       type="color"
-      default="$(body.link.visited.color)"  value="#EEEEEE"/>
+      default="$(body.link.visited.color)"  value="#fce8b2"/>
   <Variable name="posts.navigation.link.hover.color"
       description="Post navigations links hover color"
       type="color"
-      default="$(body.link.hover.color)"  value="#E1BEE7"/>
+      default="$(body.link.hover.color)"  value="#e1bee7"/>
 </Group>
 
 <Group description="Sidebar" selector="div.sidebar-container">
@@ -261,7 +264,7 @@
   <Variable name="labels.text.color"
       description="Label text color"
       type="color"
-      default="$(body.link.color)"  value="#ffffff"/>
+      default="$(body.link.color)"  value="#f7cb4d"/>
   <Variable name="labels.background.color"
       description="Label background color"
       type="color"
@@ -274,10 +277,10 @@
 <Group description="Attribution" selector=".widget.Attribution">
   <Variable name="attribution.text.color" description="Attribution text color"
       type="color"
-      default="$(body.text.color)"  value="#f7cb4d"/>
+      default="$(body.text.color)"  value="#ffffff"/>
   <Variable name="attribution.link.color" description="Attribution link color"
       type="color"
-      default="$(body.link.color)"  value="#FCE8B2"/>
+      default="$(body.link.color)"  value="#f4a900"/>
   <Variable name="attribution.icon.color" description="Attribution icon color"
       type="color"
       default="#707070"
@@ -323,7 +326,7 @@ border:0;
 box-shadow:none;
 color:$(body.link.color);
 cursor:pointer;
-font-size:14px;
+font-size:1em;
 font-weight:700;
 outline:0;
 text-decoration:none;
@@ -479,15 +482,15 @@ text-align:center
 vertical-align:bottom
 }
 .Attribution .blogger img{
-margin-$endSide:.5em
+margin-$endSide:.9em
 }
 .Attribution div{
 line-height:24px;
 margin-top:.5em
 }
 .Attribution .copyright,.Attribution .image-attribution{
-font-size:.7em;
-margin-top:1.5em
+font-size:24px;
+margin-top:24px
 }
 .BLOG_mobile_video_class{
 display:none
@@ -606,7 +609,7 @@ clear:none!important
 body.item-view .post-body a[imageanchor="1"] img{
 display:block;
 height:auto;
-margin:0 auto
+margin:12px auto
 }
 body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child{
 margin-top:20px
@@ -693,7 +696,7 @@ margin-right:8px
 bottom:0;
 color:rgba($(posts.title.color.red),$(posts.title.color.green),$(posts.title.color.blue),.54);
 display:inline-block;
-font-size:13px;
+font-size:1em;
 font-style:italic;
 margin-$startSide:8px
 }
@@ -952,7 +955,6 @@ display:none
 cursor:pointer;
 display:inline-block;
 font-weight:700;
-text-transform:uppercase;
 border-radius:2px;
 padding:8px;
 margin:-8px
@@ -1244,7 +1246,7 @@ top:0
 }
 .share-buttons li .platform-sharing-text{
 display:block;
-font-size:16px;
+font-size:1em;
 line-height:48px;
 white-space:nowrap
 }
@@ -1292,7 +1294,7 @@ padding:0
 margin-$startSide:1em
 }
 .sidebar-container .widget li{
-font-size:16px;
+font-size:1em;
 line-height:normal
 }
 .sidebar-container .widget+.widget{
@@ -1402,7 +1404,7 @@ border-bottom:solid 1px rgba($(body.text.color.red),$(body.text.color.green),$(b
 color:$(body.text.color);
 display:block;
 font-family:$(body.text.font.family);
-font-size:16px;
+font-size:18px;
 line-height:24px;
 margin:auto;
 padding-bottom:7px;
@@ -1450,7 +1452,7 @@ max-width:364px
 }
 .subscribe-popup h3{
 color:$(posts.title.color);
-font-size:1.8em;
+font-size:1.2em;
 margin-top:0
 }
 .subscribe-popup .FollowByEmail h3{
@@ -1548,7 +1550,7 @@ max-width:100%
 }
 h3{
 color:$(body.text.color);
-font-size:16px
+font-size:large;
 }
 a{
 text-decoration:none;
@@ -1567,7 +1569,7 @@ font-size:x-large;
 text-align:center
 }
 .pill-button{
-font-size:12px
+font-size:large;
 }
 .bg-photo-container{
 height:$(body.background.height);
@@ -1801,9 +1803,10 @@ transition-property:opacity;
 transition-duration:.5s
 }
 .item-view .return_link{
+font-size: 24px;
 margin-bottom:12px;
 margin-top:12px;
-position:absolute
+position:absolute;
 }
 .item-view .blog-name{
 display:-webkit-box;
@@ -1822,8 +1825,7 @@ margin:0 48px 27px 48px
 flex:0 0 auto
 }
 .item-view #header,.item-view .Header{
-margin-bottom:5px;
-margin-right:15px
+margin-bottom:12px 0;
 }
 .item-view .sticky .Header{
 margin-bottom:0
@@ -1927,10 +1929,10 @@ width:100%
 color:$(blog.title.color)
 }
 .item-view .Header h1,.sticky .Header h1{
-font-size:24px;
+font-size:45px;
 line-height:24px;
-margin:0;
-text-align:left
+margin:12px 0;
+text-align:left;
 }
 .sticky .Header h1{
 color:$(posts.text.color)
@@ -1948,7 +1950,7 @@ text-align:center
 line-height:28px
 }
 .BlogArchive li{
-font-size:16px
+font-size:1em;
 }
 .BlogArchive .post-count{
 color:$(posts.text.color)
@@ -2017,8 +2019,8 @@ color:$(posts.title.color)
 .post-body{
 color:$(posts.text.color);
 font:$(posts.text.font);
-line-height:1.6em;
-margin:1.5em 0 2em 0;
+line-height:32px;
+margin:12px 0;
 display:block
 }
 .post-body img{
@@ -2154,7 +2156,7 @@ margin:2em 0
 }
 #blog-pager a{
 color:$(attribution.link.color);
-font-size:14px
+font-size:2em;
 }
 .subscribe-button{
 border-color:$(blog.title.color);
@@ -2222,20 +2224,20 @@ color:$(popularposts.link.color)
 }
 .PopularPosts .post-title,.PopularPosts .post-title a,.PopularPosts .post-title a:hover,.PopularPosts .post-title a:visited{
 color:$(popularposts.title.color);
-font-size:18px;
+font-size:1em;
 font-weight:700;
-line-height:24px
+line-height:1em;
 }
 .PopularPosts,.PopularPosts h3.title a{
 color:$(posts.text.color);
 font:$(posts.text.font)
 }
 .main .PopularPosts{
-padding:16px 40px
+padding:24px 40px
 }
 .PopularPosts h3.title{
-font-size:14px;
-margin:0
+font-size:1.2em;
+margin:0;
 }
 .PopularPosts h3.post-title{
 margin-bottom:0
@@ -2248,7 +2250,7 @@ float:$(endSide);
 margin-top:16px
 }
 .PopularPosts .post-header .byline{
-font-size:.9em;
+font-size:1em;
 font-style:italic;
 margin-top:6px
 }
@@ -2385,7 +2387,7 @@ float:none
 }
 .widget.Profile .profile-link{
 color:$(profile.link.color);
-font-size:.9em;
+font-size:1em;
 margin-bottom:1em;
 opacity:.87;
 overflow:hidden
@@ -2395,7 +2397,7 @@ border-style:solid;
 border-width:1px;
 border-radius:12px;
 cursor:pointer;
-font-size:12px;
+font-size:1em;
 font-weight:400;
 padding:5px 20px;
 display:inline-block;
@@ -2409,7 +2411,7 @@ margin:0 16px
 margin-bottom:1em
 }
 .widget.Profile .profile-textblock{
-font-size:14px;
+font-size:1em;
 line-height:24px;
 position:relative
 }
@@ -2472,23 +2474,23 @@ display:none
 max-height:120px
 }
 .post-snippet .snippet-item{
-line-height:24px
+line-height:1.1em;
 }
 .post-snippet .snippet-fade{
 background:-webkit-linear-gradient($startSide,$(posts.background.color) 0,$(posts.background.color) 20%,$(posts.background.color.transparent) 100%);
 background:linear-gradient(to $startSide,$(posts.background.color) 0,$(posts.background.color) 20%,$(posts.background.color.transparent) 100%);
 color:$(body.text.color);
-height:24px
+height:1em;
 }
 .popular-posts-snippet.snippet-container{
 max-height:72px
 }
 .popular-posts-snippet .snippet-item{
-line-height:24px
+line-height:1.1em;
 }
 .PopularPosts .popular-posts-snippet .snippet-fade{
 color:$(body.text.color);
-height:24px
+height:1.1em;
 }
 .main .popular-posts-snippet .snippet-fade{
 background:-webkit-linear-gradient($startSide,$(popularposts.background.color) 0,$(popularposts.background.color) 20%,$(popularposts.background.color.transparent) 100%);
@@ -2505,13 +2507,13 @@ max-height:192px
 max-height:144px
 }
 .profile-snippet .snippet-item{
-line-height:24px
+line-height:1.1em;
 }
 .profile-snippet .snippet-fade{
 background:-webkit-linear-gradient($startSide,$(sidebar.backgroundColorTop) 0,$(sidebar.backgroundColorTop) 20%,$(sidebar.backgroundColorTop.transparent) 100%);
 background:linear-gradient(to $startSide,$(sidebar.backgroundColorTop) 0,$(sidebar.backgroundColorTop) 20%,$(sidebar.backgroundColorTop.transparent) 100%);
 color:$(profile.text.color);
-height:24px
+height:1em;
 }
 @media screen and (min-width:$(sidebar.width + content.width + content.margin * 2)){
 .profile-snippet .snippet-fade{
@@ -2605,13 +2607,13 @@ max-height:88px;
 max-width:88px
 }
 .post-title{
-line-height:1
+line-height:2em;
 }
 .post-title,.post-title a{
-font-size:20px
+font-size:1em;
 }
 #page_body.section div.widget.FeaturedPost h3 a{
-font-size:22px
+font-size:1em;
 }
 .mobile-ad .inline-ad{
 display:block
@@ -2648,6 +2650,9 @@ padding-left:$(sidebar.width)
 }
 .hamburger-menu{
 display:none
+font-size:24px;
+margin-top:8px;
+
 }
 body.collapsed-header .page_body .centered-top-container{
 padding-left:$(sidebar.width);
@@ -3793,13 +3798,12 @@ margin-left:40px
                     </b:includable>
                     <b:includable id='postFooterJumpLink'>
                       <b:comment>Ripple, and show &#39;keep reading&#39; as the default.</b:comment>
-                      <div class='jump-link flat-button ripple'>
-                        <a
+                      <div class='jump-link flat-button ripple'><a
                           expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url'
                           expr:title='data:post.title'>
-                          <data:blog.jumpLinkMessage />
-                        </a>
-                      </div>
+                          Read more: <data:post.title />
+
+                        </a> &amp;hellip;</div>
                     </b:includable>
                     <b:includable id='postHeader' var='post'>
                       <b:include name='headerByline' />
@@ -3976,13 +3980,11 @@ margin-left:40px
                     </b:includable>
                     <b:includable id='postFooterJumpLink'>
                       <b:comment>Ripple, and show &#39;keep reading&#39; as the default.</b:comment>
-                      <div class='jump-link flat-button ripple'>
-                        <a
+                      <div class='jump-link flat-button ripple'><a
                           expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url'
                           expr:title='data:post.title'>
-                          <data:blog.jumpLinkMessage />
-                        </a>
-                      </div>
+                          Read more <data:post.title />
+                        </a> &amp;hellip;</div>
                     </b:includable>
                     <b:includable id='postJumpLink'>
                       <b:comment>Overridden, and migrated to postFooter. Called as
@@ -4074,7 +4076,8 @@ margin-left:40px
           name='no-items' />
 
         <b:section class='sidebar_top' id='sidebar_top' name='Sidebar (Top)'>
-          <b:widget id='Profile1' locked='true' title='About Me' type='Profile' visible='false'>
+          <b:widget id='Profile1' locked='true' title='About Me' type='Profile' version='2'
+            visible='false'>
             <b:widget-settings>
               <b:widget-setting name='showaboutme'>false</b:widget-setting>
               <b:widget-setting name='showlocation'>false</b:widget-setting>
@@ -4306,6 +4309,11 @@ margin-left:40px
           visible='true'>
           <b:includable id='main'>
             <b:include name='reportAbuse' />
+          </b:includable>
+        </b:widget>
+        <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar' version='2'
+          visible='true'>
+          <b:includable id='main'>
           </b:includable>
         </b:widget>
       </b:section>
